@@ -1,1 +1,1 @@
-pyhf==0.5.3
+pyhf[contrib]
