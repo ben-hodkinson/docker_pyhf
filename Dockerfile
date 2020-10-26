@@ -13,8 +13,6 @@ RUN yum -y update \
     && yum install -y python3 \ 
     && yum clean all
 
-ENV PATH "/usr/local/bin:${PATH}"
-
 # install pyhf and dependencies
 COPY requirements.txt ./
 RUN python3 -m pip install --upgrade pip && \
@@ -25,6 +23,7 @@ ENV LC_ALL=en_US.utf-8
 ENV LANG=en_US.utf-8
 
 USER atlas
-ENV PATH /home/atlas/.local/bin:$PATH
+WORKDIR /home/atlas
+ENV HOME /home/atlas
 
 CMD [ "/bin/bash" ]
