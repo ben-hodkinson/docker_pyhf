@@ -1,1 +1,1 @@
-pyhf[contrib]
+pyhf[test]
