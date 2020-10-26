@@ -1,1 +1,1 @@
-pyhf[test]
+pyhf[contrib, xmlio, backends]
