@@ -1,4 +1,4 @@
-# docker_pyhf### You need pyhf in a usable image?
+## You need pyhf in a usable image?
 
 This image is based on the latest ATLAS AnalysisBase base image. It is intended to be used within a RECAST setup running statistical fits using pyhf.
 
