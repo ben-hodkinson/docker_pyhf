@@ -1,21 +1,25 @@
 ## You need pyhf in a usable image?
 
-This image is based on the latest ATLAS AnalysisBase base image. It is intended to be used within a RECAST setup running statistical fits using pyhf.
+This image is based on the `pyhf/pyhf:v0.5.3` image. It is intended to be used within a RECAST setup running statistical fits using pyhf.
 
-Upon running the image, you can do 
+It allows to circumvent the `/usr/local/bin/pyhf` entrypoint in setups where you can't manually circumvent it through e.g:
 
-```source /home/atlas/release_setup.sh```
+```
+docker run -it --rm --entrypoint "" pyhf/pyhf bash
+```
 
-to setup the analysis release. This will give you access to handy things like `xrdcp` to get your inputs from some grid space (don't forget to setup a Kerberos ticket for access rights).
+This is, for example, currently the case with any RECAST implementation.
 
-The image provides `python` 
+In addition, this image adds the `contrib` and `backends` requirements on top of the default `xmlio` requirements installed in the default pyhf/pyhf images.
+
+Upon running the image, you can check the python version with
 
 ```
 python3 --version
-Python 3.6.8
+Python 3.7.9
 ```
 
-and `pyhf` including all available backends as well as XML I/O utils:
+and have `pyhf` available including all available backends as well as XML I/O utils:
 
 ```
 pyhf --version
