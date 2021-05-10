@@ -10,4 +10,4 @@ RUN python -m pip install --upgrade pip && \
 
 WORKDIR /home
 ENV HOME /home
-RUN sudo usermod -aG root atlas
+RUN usermod -aG root atlas
