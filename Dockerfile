@@ -4,6 +4,7 @@ ENTRYPOINT /bin/sh
 
 # install pyhf and dependencies
 COPY requirements.txt ./
+COPY fix_1Lbb_xml.py ./
 USER atlas
 RUN python -m pip install --upgrade pip && \
     python -m pip install --no-cache-dir -r requirements.txt
